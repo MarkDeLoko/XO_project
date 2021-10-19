@@ -1,0 +1,141 @@
+html, body {
+    /*margin: 32px;*/
+    padding: 0px;
+    margin: 0;
+}
+
+
+.counter {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    font-size: 120px;
+    position: absolute;
+    line-height: 141px;
+    font-family: Roboto;
+    width: 100%;
+    top: -100px;
+    z-index: 1;
+    -webkit-user-select: none;
+
+}
+
+
+.counter .p1_count {
+    color: #EB5757;
+    opacity: 55%;
+
+}
+
+.counter .p2_count {
+    color: #2F80ED;
+    opacity: 55%;
+
+}
+
+.counter .two_dots {
+    display: flex;
+    font-size: 90px;
+    color: #000000;
+    opacity: 55%;
+    padding: 0;
+    line-height: 1.3em;
+}
+
+.counter .spacer {
+    width: 19%;
+}
+
+.game_field {
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    position: relative;
+    min-width: 400px;
+    min-height: 400px;
+    width: 50vh;
+    height: 50vh;
+    box-shadow: 4px 4px 12px 5px #00000040;
+}
+
+
+.red {
+    color: #EB5757;
+}
+
+.blue {
+    color: #2F80ED;
+}
+
+.green {
+    color: #6FCF97;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #cfcfcf;
+    cursor: pointer;
+    font-size: 100px;
+    flex: 1;
+    /*min-width: 131.35px;*/
+    /*min-height: 131.35px;*/
+
+}
+
+
+.wrapper .row {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex: 1;
+
+}
+
+.game_field .cell svg {
+    width: 80%;
+    height: 80%;
+}
+
+.actions {
+    display: flex;
+    bottom: -78px;
+    justify-content: center;
+    position: absolute;
+    -webkit-user-drag: none;
+}
+
+.actions .action-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #BB6BD9;
+    border-radius: 12px;
+    padding: 8px;
+    margin-right: 96px;
+    cursor: pointer;
+    -webkit-user-select: none;
+
+}
+
+.actions .action-button:last-child {
+    margin-right: 0;
+}
