@@ -22,8 +22,8 @@ let endOfGame = false
 let gameStore = null
 let playerSwitcher = true
 
-gameCounter.push(document.querySelector('.p1_count'))
 gameCounter.push(document.querySelector('.p2_count'))
+gameCounter.push(document.querySelector('.p1_count'))
 restartGameBtn.addEventListener('click', () => {
     if (endOfGame) {
         gameStart()
@@ -37,7 +37,7 @@ function gameStart() {
     clearGameField(gameCellsArr)
     gameStore = Array.apply(null, {length: gameCellsArr.length}).map(() => 0)
     playerSwitcher = true
-    g
+
     gameCellsArr.forEach((cell) => {
         cell.addEventListener('click', setGameValue)
     })
