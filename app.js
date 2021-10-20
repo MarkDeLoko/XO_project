@@ -2,6 +2,11 @@ const gameSize = 3
 const winSize = 3
 const gamePlayersCount = 2
 const gameField = document.querySelector('.game_field')
+const gameRows = gameField.querySelectorAll('.row')
+const gameCellsArr = gameField.querySelectorAll('.cell')
+const colors = {
+    green: 'green'
+}
 const gamePlayers = [
     'cross',
     'circle'
@@ -15,7 +20,7 @@ const gameFigures = {
 }
 const restartGameBtn = document.querySelector('.restart-button')
 const stopGameButton = document.querySelector('.stop-button')
-const gameCellsArr = gameField.querySelectorAll('.cell')
+
 const gameCounter = []
 
 let endOfGame = false
@@ -72,26 +77,47 @@ function checkGameVictory(gameStore, size) {
 
     rowsResults.forEach((playerRow, playerIndex) => {
         if (!endOfGame) {
-            if (playerRow.includes(winSize)) {
-                gameVictory(gamePlayers[playerIndex])
-                return
-            }
+            playerRow.forEach((rowItem, itemIndex) => {
+                if (rowItem === winSize) {
+                    for (let i = itemIndex * size; i < itemIndex * size + size; i++) {
+                        gameCellsArr[i].firstChild.classList = colors.green
+                    }
+                    gameVictory(gamePlayers[playerIndex])
+                }
+            })
         }
     })
-    columnsResults.forEach((playerRow, playerIndex) => {
+    columnsResults.forEach((playerColumn, playerIndex) => {
         if (!endOfGame) {
-            if (playerRow.includes(winSize)) {
-                gameVictory(gamePlayers[playerIndex])
-                return
-            }
+            playerColumn.forEach((columnItem, itemIndex) => {
+                if (columnItem === winSize){
+                    for (let i = itemIndex; i < size * size; i = i + 3) {
+                        gameCellsArr[i].firstChild.classList = colors.green
+                    }
+                    gameVictory(gamePlayers[playerIndex])
+                }
+            })
         }
     })
-    diagonalResults.forEach((playerRow, playerIndex) => {
+    diagonalResults.forEach((playerDiag, playerIndex) => {
         if (!endOfGame) {
-            if (playerRow.includes(winSize)) {
-                gameVictory(gamePlayers[playerIndex])
-                return
-            }
+            playerDiag.forEach((diagonalItem, itemIndex) => {
+                if (diagonalItem === winSize){
+                    switch (itemIndex){
+                        case 0:
+                            for (let i = 0; i < size * size; i = i + size + 1) {
+                                gameCellsArr[i].firstChild.classList = colors.green
+                            }
+                            break
+                        case 1:
+                            for (let i = size - 1; i < size * (size - 1) + 1; i = i + size - 1) {
+                                gameCellsArr[i].firstChild.classList = colors.green
+                            }
+                            break
+                    }
+                    gameVictory(gamePlayers[playerIndex])
+                }
+            })
         }
     })
 }
