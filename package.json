@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "lint": "yarn lint:js:fix && yarn lint:css:fix",
+    "lint:js": "eslint . --ext js",
+    "lint:css": "stylelint '**/*.css'",
+    "lint:css:fix": "stylelint --fix '**/*.css'",
+    "lint:js:fix": "eslint --fix . --ext js"
+  },
+  "devDependencies": {
+    "css-lint": "^1.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standart": "^0.2.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-react": "^7.26.1",
+    "html-lint": "^2.4.2",
+    "husky": "^7.0.4",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
+  }
+}
