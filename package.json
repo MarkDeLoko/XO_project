@@ -19,7 +19,13 @@
     "eslint-plugin-react": "^7.26.1",
     "html-lint": "^2.4.2",
     "husky": "^7.0.4",
+    "mini-css-extract-plugin": "^2.4.2",
     "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-standard": "^22.0.0",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "babel-loader": "^8.2.3"
   }
 }
