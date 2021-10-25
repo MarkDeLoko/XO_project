@@ -2,7 +2,6 @@ const gameSize = 3;
 const winSize = 3;
 const gamePlayersCount = 2;
 const gameField = document.querySelector('.game_field');
-// const gameRows = gameField.querySelectorAll('.row');
 const gameCellsArr = gameField.querySelectorAll('.cell');
 const colors = {
   green: 'green',
