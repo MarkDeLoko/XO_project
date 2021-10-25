@@ -2,7 +2,6 @@ const gameSize = 3;
 const winSize = 3;
 const gamePlayersCount = 2;
 const gameField = document.querySelector('.game_field');
-// const gameRows = gameField.querySelectorAll('.row');
 const gameCellsArr = gameField.querySelectorAll('.cell');
 const colors = {
   green: 'green',
@@ -44,9 +43,12 @@ function renderGameField(gameCells) {
   }
 }
 
-function countDiagsResults(store, size) {
-  const diagResults = Array(gamePlayersCount).fill(Array(size - 1).fill(0));
+function createFilledDoubleArray(first, second, value) {
+  return Array(first).fill(value).map(() => Array(second).fill(value));
+}
 
+function countDiagsResults(store, size) {
+  const diagResults = createFilledDoubleArray(gamePlayersCount, size, 0);
   diagResults.forEach((item, index) => {
     for (let i = 0; i < size * size; i += size + 1) {
       if (store[i] === gamePlayers[index]) { diagResults[index][0] += 1; }
@@ -59,7 +61,7 @@ function countDiagsResults(store, size) {
 }
 
 function countRowsForUsers(store, size) {
-  const rowsResults = Array(gamePlayersCount).fill(Array(size).fill(0));
+  const rowsResults = createFilledDoubleArray(gamePlayersCount, size, 0);
 
   rowsResults.forEach((item, index) => {
     for (let i = 0; i < size; i += 1) {
@@ -72,7 +74,7 @@ function countRowsForUsers(store, size) {
 }
 
 function countColumnsForUsers(store, size) {
-  const columnResults = Array(gamePlayersCount).fill(Array(size).fill(0));
+  const columnResults = createFilledDoubleArray(gamePlayersCount, size, 0);
 
   columnResults.forEach((item, index) => {
     for (let i = 0; i < size; i += 1) {
