@@ -45,7 +45,7 @@ function renderGameField(gameCells) {
 }
 
 function createFilledDoubleArray(first, second, value) {
-  return Array(first).fill(0).map(() => Array(second).fill(value));
+  return Array(first).fill(value).map(() => Array(second).fill(value));
 }
 
 function countDiagsResults(store, size) {
